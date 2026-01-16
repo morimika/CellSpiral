@@ -1,11 +1,16 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SpawnFoods : MonoBehaviour
 {
+    public static SpawnFoods instance;
+
+    [Header("したレーン")]
     //デフォルトプレハブ
     [SerializeField]
     private GameObject defaultPrefab;
@@ -27,10 +32,21 @@ public class SpawnFoods : MonoBehaviour
     private protected float GanarateCoolTime;
     private float GanarateTime;
 
+    [Header("胃")]
+
+    [SerializeField]
+    private GameObject foodObj;
+    [SerializeField]
+    private Transform foodObjGeneTra;
+
     void Start()
     {
         //初期設定
         GanarateTime = 0;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     void Update()
@@ -65,4 +81,17 @@ public class SpawnFoods : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// 胃に生成するものを取得し生成
+    /// </summary>
+    /// <param name="foodData"></param>
+    public void StmObjGenerator(FoodData foodData)
+    {
+        float ram = Random.Range(-0.3f, 0.3f);
+        var obj =Instantiate(foodObj, new Vector2(foodObjGeneTra.position.x+ ram, foodObjGeneTra.position.y), Quaternion.identity);
+        obj.GetComponent<GetFoodData>().foodData = foodData;
+        obj.GetComponent<SpriteRenderer>().sprite = foodData.FoodImage;
+    }
+
 }

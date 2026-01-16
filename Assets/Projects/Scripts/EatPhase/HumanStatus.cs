@@ -14,6 +14,9 @@ public class HumanStatus : MonoBehaviour
 
     void Update()
     {
-        
+        //0ˆÈ‰º‚Í‚ ‚è“¾‚È‚¢
+        if (HumanFatValue < 0) HumanFatValue = 0;
+        if (HumanProteinValue < 0) HumanProteinValue = 0;
+        if (HumanCarbohydratesValue < 0) HumanCarbohydratesValue = 0;
     }
 }
