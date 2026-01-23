@@ -48,6 +48,8 @@ public class MoveFoodImage : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log(this.gameObject.name + "‚ª‰Ÿ‚³‚ê‚½");
 
+        BGMSEManager.BSInstance.SEPlayer(5);
+
         //ˆİ‚É“ü‚ê‚é‚à‚Ì‚Ì“à—e‚ğó‚¯“n‚µ‚Ä¶¬‚µ‚Ä‚à‚ç‚¤
         SpawnFoods.instance.StmObjGenerator(foodData);
 

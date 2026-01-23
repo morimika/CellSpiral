@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429be1b6463677b4399e46fb26afe90c, type: 3}
+  m_Name: SleepMan
+  m_EditorClassIdentifier: 
+  CharaObj: {fileID: 0}
+  CharaStandImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
+  CharaImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
+  CharaWinImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
+  CharaLoseImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
+  Bullet: {fileID: 21300000, guid: b694a95138418f64b9e55d9d8dc854e1, type: 3}
+  DefHp: 60
+  DefAttack: 40
+  DefMoveSpeed: 20
+  DefDefence: 100
+  TitleText: "\u7720\u304F\u306A\u3063\u305F"
+  InfomationText: "\u4F53\u529B\u304C\u4F4E\u3044\u304C\u9811\u4E08\u306A\u5E03\u56E3\u306B\u3088\u308A\u9632\u5FA1\u529B\u304C\u9AD8\u3044\n\u78BA\u56FA\u305F\u308B\u610F\u5FD7\u3067\u5E03\u56E3\u304B\u3089\u51FA\u306A\u3044\n\u70AD\u6C34\u5316\u7269\u3082\u3068\u308A\u904E\u304E\u306B\u6CE8\u610F"

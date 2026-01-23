@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429be1b6463677b4399e46fb26afe90c, type: 3}
+  m_Name: MuscleMan
+  m_EditorClassIdentifier: 
+  CharaObj: {fileID: 0}
+  CharaStandImage: {fileID: 21300000, guid: b575619ab02122545b551118347b6a7a, type: 3}
+  CharaImage: {fileID: 21300000, guid: 5bc23c7b24442c349824428c35aee3e9, type: 3}
+  CharaWinImage: {fileID: 21300000, guid: e71f7bb9b5a171f43a9d2d005aa16d96, type: 3}
+  CharaLoseImage: {fileID: 21300000, guid: 5bc23c7b24442c349824428c35aee3e9, type: 3}
+  Bullet: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  DefHp: 50
+  DefAttack: 100
+  DefMoveSpeed: 50
+  DefDefence: 20
+  TitleText: "\u30E0\u30AD\u30E0\u30AD\u306B\u306A\u3063\u305F\uFF01"
+  InfomationText: "\u653B\u6483\u529B\u304C\u9AD8\u3044\n\u9632\u5FA1\u529B\u306F\u4F4E\u3044\u304C\u3001\u5148\u624B\u5FC5\u52DD\n\u3055\u3063\u3055\u3068\u5012\u3057\u3066\u3057\u307E\u3048\u3070\u9632\u5FA1\u529B\u306A\u3069\u4E0D\u8981"
