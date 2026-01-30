@@ -7,6 +7,9 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField]
     private float bulletSpeed = 0.5f;
 
+    [SerializeField]
+    public Vector2 frightOffset = Vector2.zero;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,8 +20,8 @@ public class EnemyBullet : MonoBehaviour
             return;
         }
 
-        float addtraY = this.transform.position.y - (bulletSpeed * Time.deltaTime);
-        this.transform.position = new Vector2(this.transform.position.x, addtraY);
+        this.transform.position = new Vector2(this.transform.position.x + (frightOffset.x * Time.deltaTime)
+                                            , this.transform.position.y + ((frightOffset.y - bulletSpeed) * Time.deltaTime));
 
         if (this.gameObject.transform.position.x < -7)
         {

@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float bulletSpeed = 0.5f;
 
+    [SerializeField]
+    private float rotateSpeed = 100f;
+    private float angle;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +26,12 @@ public class Bullet : MonoBehaviour
         if (this.gameObject.transform.position.x > 7)
         {
             Destroy(this.gameObject);
+        }
+
+        if (SettingManager.picChara.Name != "SleepMan")
+        {
+            angle += rotateSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 

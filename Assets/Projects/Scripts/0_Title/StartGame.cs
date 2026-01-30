@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class StartGame : MonoBehaviour
         {
             BGMSEManager.BSInstance.BGMPlayer(0);
         }
-
+        SceneManager.sceneLoaded += SceneLoaded;
         tween = DOTween.Sequence();
         tween.Join(text1CG.DOFade(0, 0.3f).SetLoops(2, LoopType.Yoyo));
         tween.Join(text2CG.DOFade(0, 0.3f).SetLoops(2, LoopType.Yoyo));
@@ -28,8 +29,14 @@ public class StartGame : MonoBehaviour
     }
     public void OnStartButton()
     {
-        tween.Kill();
         BGMSEManager.BSInstance.SEPlayer(0);
         MySceneManager.Instance.SceneFadeChange("Game_EatPhase");
+    }
+
+    void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        // “o˜^‚µ‚½ŠÖ”‚ğíœ‚µ‚Ä‚¨‚©‚È‚¢‚ÆAƒV[ƒ“‘JˆÚ‚Ì‚½‚Ñ‚Éˆ—‚ªd•¡‚·‚é
+        SceneManager.sceneLoaded -= SceneLoaded;
+        tween.Kill(true);
     }
 }

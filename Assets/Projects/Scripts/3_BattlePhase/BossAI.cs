@@ -32,14 +32,20 @@ public class BossAI : MonoBehaviour
     private float bossStampSize = 0.2f;
     [SerializeField]
     private float bossStampDuration = 0.2f;
+    [SerializeField]
+    private float bossRotDuration = 0.5f;
 
     [SerializeField]
     private GameObject bulletObj;
     [SerializeField]
     private float bulletDelay = 0.3f;
+    private float bulletDelayKeeping;
     private float deftime;
 
     private Sequence tween;
+    private Sequence tween2;
+
+    private int bulletKind = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +53,7 @@ public class BossAI : MonoBehaviour
         defHp = Hp;
         doOncePic = false;
         deftime = bulletDelay;
+        bulletDelayKeeping = bulletDelay;
     }
 
     // Update is called once per frame
@@ -56,6 +63,7 @@ public class BossAI : MonoBehaviour
         if (GameManager.IsGame == false)
         {
             tween.Pause();
+            tween2.Pause();
             return;
         }
 
@@ -81,11 +89,33 @@ public class BossAI : MonoBehaviour
         deftime -= Time.deltaTime;
         if (deftime < 0)
         {
-            //’e”­ŽË
-            Instantiate(bulletObj, transform.position, Quaternion.identity);
-            //Instantiate(bulletObj, new Vector2(transform.position.x+3,transform.position.y-0.5f), Quaternion.identity);
-            //Instantiate(bulletObj, new Vector2(transform.position.x-3,transform.position.y-0.5f), Quaternion.identity);
-
+            if (bulletKind == 1)
+            {
+                //’e”­ŽË
+                Instantiate(bulletObj, transform.position, Quaternion.identity);
+            }
+            else if (bulletKind == 2)
+            {
+                //’e”­ŽË
+                float angleX = Random.Range(-5, 5);
+                float angleY = Random.Range(-0.5f, 0.5f);
+                var obj1 = Instantiate(bulletObj, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+                obj1.GetComponent<EnemyBullet>().frightOffset = new Vector2(angleX, angleY);
+            }
+            else if (bulletKind == 3)
+            {
+                //’e”­ŽË
+                Instantiate(bulletObj, transform.position, Quaternion.identity);
+                var obj1 = Instantiate(bulletObj, new Vector2(transform.position.x+1,transform.position.y-0.5f), Quaternion.identity);
+                obj1.GetComponent<EnemyBullet>().frightOffset=new Vector2(1.5f,0);
+                var obj2 = Instantiate(bulletObj, new Vector2(transform.position.x-1,transform.position.y-0.5f), Quaternion.identity);
+                obj2.GetComponent<EnemyBullet>().frightOffset = new Vector2(-1.5f, 0);
+            }
+            else
+            {
+                Debug.LogError("Error : Bullet Kind - Out of flow");
+                return;
+            }
             //ƒŠƒZƒbƒg
             deftime = bulletDelay;
         }
@@ -98,11 +128,11 @@ public class BossAI : MonoBehaviour
         {
             if (act == 1)
             {
-                WipAttack_2();
+                RandomAttack_2();
             }
             else
             {
-                ShootBlack_3();
+                ShootThrees_3();
             }
         }
         else if(now==2)
@@ -113,7 +143,7 @@ public class BossAI : MonoBehaviour
             }
             else
             {
-                ShootBlack_3();
+                ShootThrees_3();
             }
         }
         else 
@@ -124,13 +154,15 @@ public class BossAI : MonoBehaviour
             }
             else
             {
-                WipAttack_2();
+                RandomAttack_2();
             }
         }
     }
 
     private void ShootRangeBall_1()
     {
+        bulletKind = 1;
+        bulletDelay = bulletDelayKeeping;
         tween = DOTween.Sequence();
         tween.Append(this.transform.DOMoveX(3.5f, bossMoveDuration).SetLoops(2, LoopType.Yoyo));
         tween.Append(this.transform.DOMoveX(-3.5f, bossMoveDuration).SetLoops(2, LoopType.Yoyo));
@@ -138,17 +170,36 @@ public class BossAI : MonoBehaviour
         tween.Play().OnComplete(() => PicAction(1));
     }
 
-    private void WipAttack_2()
+    private void RandomAttack_2()
     {
+        bulletKind = 2;
+        bulletDelay = bulletDelayKeeping;
+
         tween = DOTween.Sequence();
+        tween2 = DOTween.Sequence();
+        
         tween.Append(this.transform.DOMoveX(3.5f, bossMoveDuration).SetLoops(2, LoopType.Yoyo));
         tween.Append(this.transform.DOMoveX(-3.5f, bossMoveDuration).SetLoops(2, LoopType.Yoyo));
         tween.SetLoops(2);
-        tween.Play().OnComplete(() => PicAction(2));
+       
+        tween2.Join(this.transform.DORotate(new Vector3(0,0,20), bossRotDuration)).SetLoops(2,LoopType.Yoyo).SetEase(Ease.InOutSine);
+        tween2.Append(this.transform.DORotate(new Vector3(0,0,-20), bossRotDuration)).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        tween2.SetLoops(-1);
+
+        tween2.Play();
+        tween.Play().OnComplete(RandomAttack_2_Next);
+    }
+    private void RandomAttack_2_Next()
+    {
+        PicAction(2);
+        this.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+        tween2.Kill();
     }
 
-    private void ShootBlack_3()
+    private void ShootThrees_3()
     {
+        bulletKind = 3;
+        bulletDelay = bulletDelayKeeping;
         tween = DOTween.Sequence();
         tween.Append(this.transform.DOScaleY(this.transform.localScale.y-bossStampSize, bossStampDuration).SetLoops(2, LoopType.Yoyo));
         tween.SetLoops(4);

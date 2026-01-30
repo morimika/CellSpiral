@@ -35,6 +35,7 @@ public class MySceneManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //フェードする
+        fadeImageCG.alpha = 1;
         fadeImageCG.DOFade(0, fadeDuration).SetDelay(0.5f);
     }
 }

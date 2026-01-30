@@ -30,6 +30,11 @@ public class ResultManager : MonoBehaviour
     private Image losePlayerSpr;
 
     [SerializeField]
+    private GameObject nextTextw;
+    [SerializeField]
+    private GameObject nextTextl;
+
+    [SerializeField]
     private float StayTime = 5f;
     private bool canNext = false;
 
@@ -61,7 +66,8 @@ public class ResultManager : MonoBehaviour
             loseObj.SetActive(true);
             losePlayerSpr.sprite = SettingManager.picChara.CharaLoseImage;
         }
-
+        nextTextw.SetActive(false);
+        nextTextl.SetActive(false);
         //ŽŸ‚ÖˆÄ“à
         canNext = false;
         Invoke(nameof(ActiveNextScene), StayTime);
@@ -71,6 +77,8 @@ public class ResultManager : MonoBehaviour
     {
         if (canNext)
         {
+            if (isWin && nextTextw.activeSelf==false) nextTextw.SetActive(true);
+            else if (!isWin && nextTextw.activeSelf == false) nextTextl.SetActive(true);
             if (Input.GetMouseButton(0))
             {
                 canNext = false;

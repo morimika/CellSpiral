@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429be1b6463677b4399e46fb26afe90c, type: 3}
   m_Name: AllMan
   m_EditorClassIdentifier: 
-  CharaObj: {fileID: 0}
+  Name: AllMan
   CharaStandImage: {fileID: 21300000, guid: 254927b4dc18d3e44af5666bdfd618ae, type: 3}
   CharaImage: {fileID: 21300000, guid: b5c550616aba5644592ac6f371bb79b6, type: 3}
   CharaWinImage: {fileID: 21300000, guid: 254927b4dc18d3e44af5666bdfd618ae, type: 3}
   CharaLoseImage: {fileID: 21300000, guid: b5c550616aba5644592ac6f371bb79b6, type: 3}
-  Bullet: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  Bullet: {fileID: 21300000, guid: b3bd6daa912a94e47a6623d834c5cb90, type: 3}
   DefHp: 60
   DefAttack: 50
   DefMoveSpeed: 60
   DefDefence: 50
-  TitleText: "\u5065\u5EB7\u306B\u306A\u3063\u305F\uFF01"
+  TitleText: " \u5065\u5EB7\u306B\u306A\u3063\u305F\uFF01"
   InfomationText: "\u30D0\u30E9\u30F3\u30B9\u306E\u53D6\u308C\u305F\u80FD\u529B\n\u52D5\u304D\u3084\u3059\u3044\u3001\u304A\u624B\u672C\u306E\u3088\u3046\u306A\u5065\u5EB7\u4F53"

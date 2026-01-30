@@ -57,6 +57,7 @@ public class SpawnFoods : MonoBehaviour
         {
             //ランダムでリストからピック
             int picFood = Random.Range(0, foodsList.FoodLists[kindRotation % 3].FoodDatas.Count);
+            Debug.Log("食べ物：" + picFood);
             //リストの情報をプレハブにあてはめ生成
             //オブジェクト生成
             var obj = Instantiate(defaultPrefab, spawnPos.position, Quaternion.identity,this.transform);

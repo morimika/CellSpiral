@@ -34,8 +34,8 @@ public class SetBattleStatus : MonoBehaviour
         HP = playerChara.DefHp * (3 + ((SettingManager.FatStats / 100) + (SettingManager.ProteinStats / 100)));
         //UŒ‚—Í = Šî‘bUŒ‚—Í * (1+(æ“¾ƒ^ƒ“ƒpƒN/1000 + æ“¾’Y…‰»•¨/1500))
         ATTACK = playerChara.DefAttack * (1 + ((SettingManager.ProteinStats / 1000) + (SettingManager.CarbohydratesStats / 1500)));
-        //ˆÚ“®‘¬“x = (Šî‘bˆÚ“®‘¬“x * (1+(æ“¾ƒ^ƒ“ƒpƒN/1000 + æ“¾’Y…‰»•¨/2000 - æ“¾‰¿/1500)))/5
-        MOVESPEED = (playerChara.DefMoveSpeed * (1 + ((SettingManager.ProteinStats / 1000) + (SettingManager.CarbohydratesStats / 2000) - (SettingManager.FatStats / 1000))))/5;
+        //ˆÚ“®‘¬“x = (Šî‘bˆÚ“®‘¬“x * (1+(æ“¾ƒ^ƒ“ƒpƒN/1000 + æ“¾’Y…‰»•¨/1500 - æ“¾‰¿/2000)))/5
+        MOVESPEED = (playerChara.DefMoveSpeed * (1 + ((SettingManager.ProteinStats / 1000) + (SettingManager.CarbohydratesStats / 1500) - (SettingManager.FatStats / 2000))))/4;
         //–hŒä—Í = Šî‘b–hŒä—Í * (1+(æ“¾‰¿/1500 + æ“¾’Y…‰»•¨/1000))
         DEFENCE = playerChara.DefDefence * (1 + ((SettingManager.FatStats / 1500) + (SettingManager.CarbohydratesStats / 1000)));
         this.GetComponent<SpriteRenderer>().sprite = playerChara.CharaImage;
@@ -44,8 +44,9 @@ public class SetBattleStatus : MonoBehaviour
     private void DebugPic()
     {
         //debug
-        SettingManager.FatStats = 400;
-        SettingManager.ProteinStats = 400;
-        SettingManager.CarbohydratesStats = 400;
+        SettingManager.FatStats = 600;
+        SettingManager.ProteinStats = 600;
+        SettingManager.CarbohydratesStats = 600;
+        SettingManager.picChara = playerChara;
     }
 }

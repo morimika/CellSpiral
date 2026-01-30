@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429be1b6463677b4399e46fb26afe90c, type: 3}
   m_Name: SleepMan
   m_EditorClassIdentifier: 
-  CharaObj: {fileID: 0}
+  Name: SleepMan
   CharaStandImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
   CharaImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}
   CharaWinImage: {fileID: 21300000, guid: 3bd7e8f2138252f4888471ce62a56c48, type: 3}

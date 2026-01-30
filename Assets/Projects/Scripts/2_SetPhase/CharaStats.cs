@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "CreateCharaStats")]
 public class CharaStats : ScriptableObject
 {
-    [Label("キャラ：プレハブ")]
-    public GameObject CharaObj;
+    [Label("キャラ：名前")]
+    public string Name;
     [Label("キャラ：立ち絵画像")]
     public Sprite CharaStandImage;
     [Label("キャラ：操作画像")]

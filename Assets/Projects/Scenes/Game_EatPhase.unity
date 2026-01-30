@@ -2816,6 +2816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inGame: 0
   maxTime: 30
+  defstartTime: 1.5
   timeText: {fileID: 975593066}
   gaugeBG: {fileID: 1886434601}
   panel: {fileID: 1441541916}

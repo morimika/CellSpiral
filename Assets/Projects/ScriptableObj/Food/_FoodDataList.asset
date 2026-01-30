@@ -18,11 +18,25 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 503349bd132526340b003245dcdf89ed, type: 2}
     - {fileID: 11400000, guid: eb864c4703829194a9879455a1e8de22, type: 2}
     - {fileID: 11400000, guid: 51381cc4a51d17e48883882858417de7, type: 2}
+    - {fileID: 11400000, guid: 1034030657cfca64c96713408f1a8810, type: 2}
+    - {fileID: 11400000, guid: bed48f210bcc08c41868627b81983e37, type: 2}
+    - {fileID: 11400000, guid: 4de5a0256d4b1cf42bc53c529ed7dacb, type: 2}
+    - {fileID: 11400000, guid: f7e550a7f4d607c40b3784940e700416, type: 2}
+    - {fileID: 11400000, guid: ea0d57a51bbe49747ac2cb57265962d6, type: 2}
   - ListName: "\u30BF\u30F3\u30D1\u30AF\u8CEA"
     FoodDatas:
     - {fileID: 11400000, guid: b1c62f52f0f05cd4e8baf8ea02a20805, type: 2}
     - {fileID: 11400000, guid: eb864c4703829194a9879455a1e8de22, type: 2}
+    - {fileID: 11400000, guid: b417834db26032c4d973146ea1978466, type: 2}
+    - {fileID: 11400000, guid: e44649f1df987a74c9f19f321ad07d32, type: 2}
+    - {fileID: 11400000, guid: a7e12543addbbd740a4bea00a582a3f9, type: 2}
+    - {fileID: 11400000, guid: ea0d57a51bbe49747ac2cb57265962d6, type: 2}
   - ListName: "\u70AD\u6C34\u5316\u7269"
     FoodDatas:
-    - {fileID: 11400000, guid: 51381cc4a51d17e48883882858417de7, type: 2}
     - {fileID: 11400000, guid: 75b3e2a5fe612bb4fab08c9f4b851f69, type: 2}
+    - {fileID: 11400000, guid: f454bd4744ce0b3498d95073352f65dc, type: 2}
+    - {fileID: 11400000, guid: 860b9fbf98cdb58429efa1d8dde77787, type: 2}
+    - {fileID: 11400000, guid: bed48f210bcc08c41868627b81983e37, type: 2}
+    - {fileID: 11400000, guid: 34c808b0f6390e445aa38a0fd1d7a7dc, type: 2}
+    - {fileID: 11400000, guid: c4ee17390e946304298b0dc2f6e6d402, type: 2}
+    - {fileID: 11400000, guid: 355e6533d6a7cd7408821e3d77efbf28, type: 2}

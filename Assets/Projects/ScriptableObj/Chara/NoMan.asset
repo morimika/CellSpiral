@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429be1b6463677b4399e46fb26afe90c, type: 3}
   m_Name: NoMan
   m_EditorClassIdentifier: 
-  CharaObj: {fileID: 0}
+  Name: NoMan
   CharaStandImage: {fileID: 21300000, guid: 3890e281522ede34cbcbf16f927daede, type: 3}
   CharaImage: {fileID: 21300000, guid: 3890e281522ede34cbcbf16f927daede, type: 3}
   CharaWinImage: {fileID: 21300000, guid: 3890e281522ede34cbcbf16f927daede, type: 3}
   CharaLoseImage: {fileID: 21300000, guid: 3890e281522ede34cbcbf16f927daede, type: 3}
-  Bullet: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  Bullet: {fileID: 21300000, guid: 04c4555578bda5544acea325a2ed2d03, type: 3}
   DefHp: 10
   DefAttack: 10
   DefMoveSpeed: 10
